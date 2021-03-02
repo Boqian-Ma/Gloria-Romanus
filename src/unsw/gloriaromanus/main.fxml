@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import com.esri.arcgisruntime.mapping.view.MapView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.Background?>
+<?import javafx.scene.layout.BackgroundFill?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ChoiceBox?>
+
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<?import javafx.scene.text.*?>
+
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           stylesheets="/unsw/gloriaromanus/style.css">
+    
+    <MapView fx:id="mapView"/>
+
+    <VBox StackPane.alignment="TOP_RIGHT" spacing="10" maxWidth="200"  styleClass="panel-region" >
+        <padding>
+            <Insets topRightBottomLeft="10"/>
+        </padding>
+        <background>
+            <Background>
+                <fills>
+                    <BackgroundFill>
+                        <fill>
+                            <Color opacity="0.3"/>
+                        </fill>
+                    </BackgroundFill>
+                </fills>
+            </Background>
+        </background>
+        <!-- Goals -->
+        <HBox spacing="10">
+            <VBox>
+                <Label text="And Goal"/>
+                <TextField fx:id="and_goal" text=""/>
+            </VBox>
+            <VBox>
+                <Label text="Or Goal 1"/>
+                <TextField fx:id="or_goal_1" text=""/>
+                <Label text="Or Goal 2"/>
+                <TextField fx:id="or_goal_2" text=""/>
+            </VBox>
+        </HBox>
+        <!-- Current playing faction information -->
+        <HBox spacing="10">
+            <VBox>
+                <Label text="Faction Information"/>
+                <TextArea fx:id="current_faction_info" text="" editable="false"/>
+            </VBox>
+        </HBox>
+
+        <VBox>
+            <Label text="Units Avaliable"/>
+            <Text text="* means the units has attacked in this round" styleClass="text-id"/>
+            <GridPane>
+                <padding>
+                    <Insets top="10" right="10" bottom="0" left="10"/>
+                </padding>
+            </GridPane>
+
+            <GridPane fx:id="units_display" hgap="10">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+
+                <Label text="Unit" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="#Troops" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                <Label text="#MvPoints" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+            </GridPane>
+            <Button text="Invade" onAction="#clickedInvadeButton"/>
+        </VBox>
+
+
+
+    </VBox>
+    <!-- LHS VBOX -->
+    <VBox StackPane.alignment="TOP_LEFT" spacing="10" maxWidth="300" styleClass="panel-region">
+        <padding>
+            <Insets topRightBottomLeft="10"/>
+        </padding>
+        <background>
+            <Background>
+                <fills>
+                    <BackgroundFill>
+                        <fill>
+                            <Color opacity="0.3"/>
+                        </fill>
+                    </BackgroundFill>
+                </fills>
+            </Background>
+        </background>
+
+
+        <HBox spacing="10">
+            <VBox>
+                <Label text="First province"/>
+                <TextField fx:id="invading_province" text="" editable="false"/>
+            </VBox>
+            <VBox>
+                <Label text="Second province"/>
+                <TextField fx:id="opponent_province" text="" editable="false"/>
+            </VBox>
+        </HBox>
+
+        <HBox spacing="10">
+            <VBox>
+                <Label text="Current round"/>
+                <TextField fx:id="current_round" text="1" editable="false"/>
+            </VBox>
+            <VBox>
+                <Label text="Current Faction"/>
+                <TextField fx:id="current_playing_faction" text="" editable="false"/>
+            </VBox>
+        </HBox>
+
+        <HBox spacing="10" maxWidth="250">
+            <Button text="End Turn" onAction="#clickedEndTurnButton"/>
+            <Button text="Reset Selection" onAction="#clickedResetSelectionButton"/>
+        </HBox>
+
+        <VBox>
+            <Label text="Output from interactions"/>
+            <TextArea fx:id="output_terminal" text="" editable="false"/>
+        </VBox>
+
+        <HBox spacing="10" maxWidth="250">
+            
+            <Button text="Move" onAction="#clickedMoveButton"/>
+            <Button text="Change Tax" onAction="#clickedTax"/>
+        </HBox>
+        <HBox spacing="10" maxWidth="250">
+            <Button text="Train" onAction="#clickedTrainButton"/>
+        </HBox>
+
+
+        <VBox maxHeight="100">
+            <Label text="Selected Province 1 information"/>
+            <TextArea fx:id="province1_info_output" text="" editable="false"/>
+        </VBox>
+    
+        <VBox maxHeight="100">
+            <Label text="Selected Province 2 information"/>
+            <TextArea fx:id="province2_info_output" text="" editable="false"/>
+        </VBox>
+
+        <HBox spacing="10">
+            <VBox>
+                <Button text="Save Game" onAction="#clickedSaveGame"/>
+                <Label fx:id = "save_game_message" text=""/>
+            </VBox>
+
+            <VBox>
+                <Button text="Exit" onAction="#clickedExit"/>
+            </VBox>
+
+        </HBox>
+
+    </VBox>
+
+    <StackPane fx:id="training_popup" >
+        <VBox style=" -fx-background-color: grey;  -fx-padding: 15;">
+            <fx:define>
+                <ToggleGroup fx:id="options"/>
+            </fx:define>
+            <Button text="x" onAction="#closeTraining"/>
+            <VBox alignment="CENTER">
+            <Label fx:id="error_message" text="" />
+            </VBox>
+            <RadioButton fx:id="elephant" text="Elephant" toggleGroup="$options"/>
+            <RadioButton fx:id="roman_legionary" text="Roman Legionary" toggleGroup="$options"/>
+            <RadioButton fx:id="beserker" text="Beserker" toggleGroup="$options"/>
+            <RadioButton fx:id="heavy_infantry" text="Heavy Infantry" toggleGroup="$options"/>
+            <RadioButton fx:id="spearmen" text="Spearmen" toggleGroup="$options"/>
+            <RadioButton fx:id="missile_infantry" text="Missle Infantry" toggleGroup="$options"/>
+            <RadioButton fx:id="melee_cavalry" text="Melee Cavalry" toggleGroup="$options"/>
+            <RadioButton fx:id="horse_archers" text="Horse Archers" toggleGroup="$options"/>
+            <RadioButton fx:id="chariots" text="Chariots" toggleGroup="$options"/>
+            <RadioButton fx:id="artillery" text="Artillery" toggleGroup="$options"/>
+            <RadioButton fx:id="javelin_skirmisher" text="Javelin Skirmisher" toggleGroup="$options"/>
+            <RadioButton fx:id="druid" text="Druid" toggleGroup="$options"/>
+            <RadioButton fx:id="melee_infantry" text="Melee Infantry" toggleGroup="$options"/>
+            <RadioButton fx:id="pikemen" text="Pikemen" toggleGroup="$options"/>
+            <Button fx:id="final_train" text="Train!" onAction="#callTrain"/>
+        </VBox>
+    </StackPane>
+
+    <StackPane fx:id="tax_popup">
+    <VBox style="-fx-background-color: grey; -fx-padding: 15;">
+        <fx:define>
+            <ToggleGroup fx:id="tax_options" />
+        </fx:define>
+        <Button text="x" onAction="#closeTax"/>
+        <VBox alignment="CENTER">
+        <Label fx:id="tax_text" text="Please select the tax rate you would like to put on your province."/>
+        </VBox>
+        <RadioButton fx:id="low_tax" text="Low tax = +10 town-wealth growth per turn for the province, tax rate = 10%" toggleGroup="$tax_options"/>
+        <RadioButton fx:id="normal_tax" text="Normal tax = No effect on per turn town-wealth growth, tax rate = 15%" toggleGroup="$tax_options" />
+        <RadioButton fx:id="high_tax" text="High tax = -10 town-wealth growth per turn for the province, tax rate = 20%" toggleGroup="$tax_options" />
+        <RadioButton fx:id="veryhigh_tax" text="Very high tax = -30 town-wealth growth per turn for the province, tax rate = 25%, -1 morale for all soldiers residing in the province" toggleGroup="$tax_options" />
+        <VBox alignment="CENTER">
+        <Button fx:id="final_tax" text="Change the tax level!" onAction="#callTax"/>
+        </VBox>
+    </VBox>
+    </StackPane>
+    <StackPane fx:id="move_popup">
+    <VBox style="-fx-background-color: grey; -fx-padding: 15;">
+        <fx:define>
+            <ToggleGroup fx:id="move_options" />
+        </fx:define>
+        <Button text="x" onAction="#closeMove"/>
+        <Label fx:id="move_text" text="" />
+        <HBox>
+            <VBox alignment="CENTER">
+            <Label fx:id="move_message" text="Select which troop type you would like to move "/>
+            </VBox>
+            <ChoiceBox fx:id="unit_name"/>
+        </HBox>
+        <Button fx:id="final_move" text="Move the troops!" onAction="#callMove"/>
+        <VBox alignment="CENTER">
+            <Label fx:id="move_error" text="" />
+        </VBox>
+    </VBox>
+    </StackPane>
+
+</StackPane>

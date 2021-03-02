@@ -1,0 +1,36 @@
+#pane {
+    -fx-background-image:url('images/background/new_game_background.png');
+    -fx-background-size: 100% 100%;    
+}
+
+.panel-region .label {
+    -fx-text-fill: white;
+  }
+  
+  .label {
+    -fx-text-fill: black;
+  }
+  
+ 
+
+
+  .text-field {
+      -fx-font-family: "Comic Sans MS";
+      -fx-padding: 1,1,1,1;
+      -fx-border-color: brown;
+      -fx-border-width: 2;
+      -fx-border-radius: 2;
+      -fx-background-color: pink;
+      -fx-text-fill: black;
+      
+   }
+
+   .text-id { 
+      -fx-font-smoothing-type: lcd;
+      -fx-fill: white;
+      -fx-font-size: 11pt;
+     }
+
+* {
+   -fx-font-family: "Monospace";
+}

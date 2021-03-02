@@ -1,0 +1,43 @@
+.panel-region .label {
+    -fx-text-fill: white;
+  }
+  
+  .label {
+    -fx-text-fill: black;
+  }
+  
+  .slider .axis {
+      -fx-tick-label-fill: white;
+  }
+  
+  .range-slider .axis {
+      -fx-tick-label-fill: white;
+  }
+  
+  .panel-region .check-box {
+     -fx-text-fill: white;
+  }
+  
+  .panel-region .radio-button {
+     -fx-text-fill: white;
+  }
+  
+  .color-picker .color-picker-label {
+     -fx-text-fill: black;
+  }
+
+  .text-field {
+      -fx-font-family: "Comic Sans MS";
+      -fx-padding: 1,1,1,1;
+      -fx-border-color: white;
+      -fx-border-width: 2;
+      -fx-border-radius: 1;
+      -fx-border: gone;
+      -fx-background-color: transparent;
+      -fx-text-fill: white;
+      
+   }
+
+   .units_display{
+      -fx-text-fill: white;
+   }

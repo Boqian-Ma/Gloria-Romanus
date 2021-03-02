@@ -1,0 +1,82 @@
+{
+    "player1": {
+        "faction": "faction",
+        "treasury": 100,
+        "total_wealth": 100,
+        "provinces": {
+            "province1": {
+ 
+                "tax_rate": 0.1,
+                "wealth_rate": 10,
+                "training_slot_1": {
+                    "endTurn": 0,
+                    "currentTrianing_unit": "unit"
+                },
+                "units": {
+                    "unit_name": {
+                        "num_troop": 10,
+                        "currentMvPoints": 10
+                    }
+                }
+            } ,
+            "province2": {
+
+                "tax_rate": 0.1,
+                "wealth_rate": 10,
+                "training_slot_1": {
+                    "endTurn": 0,
+                    "currentTrianing_unit": "unit"
+                },
+                "units": {
+                    "unit_name": {
+                        "num_troop": 10,
+                        "currentMvPoints": 10
+                    }
+                }
+            }
+        }
+    },
+
+    "player2": {
+        "faction": "faction",
+        "treasury": 100,
+        "total_wealth": 100,
+        "provinces": {
+            "province1": {
+                "gold": 100,
+                "tax_rate": 0.1,
+                "wealth_rate": 10,
+                "training_slot_1": {
+                    "endTurn": 0,
+                    "currentTrianing_unit": "unit"
+                },
+                "units": {
+                    "unit_name": {
+                        "num_troop": 10,
+                        "currentMvPoints": 10
+                    }
+                }
+            } ,
+            "province2": {
+                "gold": 100,
+                "tax_rate": 0.1,
+                "wealth_rate": 10,
+                "training_slot_1": {
+                    "endTurn": 0,
+                    "currentTrianing_unit": "unit"
+                },
+                "units": {
+                    "unit_name": {
+                        "num_troop": 10,
+                        "currentMvPoints": 10
+                    }
+                }
+            }
+        }
+    },
+
+
+    "current_faction": "current_player",
+    "current_round": "100",
+    "winner_faction": null
+}

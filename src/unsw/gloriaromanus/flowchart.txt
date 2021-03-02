@@ -1,0 +1,33 @@
+
+
+New game:
+1. initialise game
+2. create players -> create players's factions and assign to them
+3. create provinces and assign to factions
+
+
+
+Load game:
+1. initialise game
+2. create players --> create players's factions and load statistics about each factions-> assign to each players
+3. in each faction, load each province and each province's statistics 
+    current training slots (start date, end date, unit being trained)
+    wealth level
+    tax rate and wealth rate
+    units and their statistics in each faction
+    
+
+
+Battle
+
+A battle takes in two armies.
+
+Battle begins -> 
+Skirmishes
+1. keeps track of number of engagements 
+2. takes in the list of units from two armies 
+3. engage until 200 or one list of units becomes empty
+
+: select random unit for an engagement 
+    
+

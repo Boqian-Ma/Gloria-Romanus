@@ -1,0 +1,227 @@
+{
+    "elephant": {
+        "cost": 5,
+        "trainingTime": 2,
+        "numTroops": 10,
+        "type": ["infantry"],
+        "abilities": {
+                "range": 1,
+                "armour": 3,
+                "morale": 6,
+                "speed": 4,
+                "attack": 85,
+                "defenseSkill": 15,
+                "shieldDefense": 5
+        },
+        "movementPoint": 10
+    },
+    "roman-legionary": {
+        "cost": 5,
+        "trainingTime": 2,
+        "numTroops": 10,
+        "type": ["infantry"],
+        "abilities": {
+                "range": 1,
+                "armour": 3,
+                "morale": 6,
+                "speed": 8,
+                "attack": 100,
+                "defenseSkill": 10,
+                "shieldDefense": 5
+        },
+        "movementPoint": 10
+    },
+    "beserker" : {
+        "cost": 5,
+        "trainingTime": 2,
+        "numTroops": 10,
+        "type": ["infantry"],
+        "abilities": {
+            "range": 2,
+            "armour": 3,
+            "morale": 6,
+            "speed": 12,
+            "attack": 80,
+            "defenseSkill": 8,
+            "shieldDefense": 6
+        },
+        "movementPoint": 10
+    },
+    "heavy-infantry": {
+        "numTroops": 10,
+        "cost": 5,
+        "trainingTime": 2,
+        "type": ["infantry"],
+        "abilities": {
+            "range": 1,
+            "armour": 12,
+            "morale": 6,
+            "speed": 4,
+            "attack": 70,
+            "defenseSkill": 10,
+            "shieldDefense": 8
+        },
+        "movementPoint": 10
+
+    },
+    "spearmen" : {
+        "numTroops": 10,
+        "cost": 5,
+        "trainingTime": 2,
+        "type": ["infantry", "ranged"],
+        "abilities": {
+            "range": 5,
+            "armour": 1,
+            "morale": 6,
+            "speed": 5,
+            "attack": 70,
+            "defenseSkill": 2,
+            "shieldDefense": 3
+        },
+        "movementPoint": 10
+    },
+    "missile-infantry": {
+        "cost": 5,
+        "trainingTime": 2,
+        "numTroops": 10,
+        "type": ["infantry", "ranged"],
+        "abilities": {
+            "range": 5,
+            "armour": 1,
+            "morale": 6,
+            "speed": 5,
+            "attack": 70,
+            "defenseSkill": 2,
+            "shieldDefense": 3
+        },
+        "movementPoint": 10
+    },
+    "melee-cavalry": {
+        "cost": 5,
+        "trainingTime": 2,
+        "numTroops": 10,
+        "type": ["cavalry"],
+        "abilities": {
+            "range": 1,
+            "armour": 4,
+            "morale": 6,
+            "speed": 7,
+            "attack": 85,
+            "defenseSkill": 2,
+            "shieldDefense": 3
+        },
+        "movementPoint": 15
+    },
+    "horse-archers": {
+        "cost": 5,
+        "trainingTime": 2,
+        "numTroops": 10,
+        "type": ["cavalry", "ranged"],
+        "abilities": {
+            "range": 5,
+            "armour": 3,
+            "morale": 6,
+            "speed": 7,
+            "attack": 75,
+            "defenseSkill": 3,
+            "shieldDefense": 4
+        },
+        "movementPoint": 15
+    },
+    "chariots": {
+        "cost": 5,
+        "trainingTime": 2,
+        "numTroops": 10,
+        "type": ["cavalry"],
+        "abilities": {
+            "range": 1,
+            "armour": 8,
+            "morale": 6,
+            "speed": 3,
+            "attack": 60,
+            "defenseSkill": 7,
+            "shieldDefense": 6
+        },
+        "movementPoint": 15
+    },
+    "artillery": {
+        "cost": 5,
+        "trainingTime": 2,
+        "numTroops": 10,
+        "type": ["ranged"],
+        "abilities": {
+            "range": 1,
+            "armour": 4,
+            "morale": 6,
+            "speed": 7,
+            "attack": 85,
+            "defenseSkill": 2,
+            "shieldDefense": 3
+        },
+        "movementPoint": 4
+    },
+    "javelin-skirmisher": {
+        "cost": 5,
+        "trainingTime": 2,
+        "numTroops": 10,
+        "type": ["ranged"],
+        "abilities": {
+            "range": 5,
+            "armour": 3,
+            "morale": 6,
+            "speed": 4,
+            "attack": 70,
+            "defenseSkill": 2,
+            "shieldDefense": 3
+        },
+        "movementPoint": 4
+    },
+    "druid": {
+        "cost": 5,
+        "trainingTime": 2,
+        "numTroops": 10,
+        "type": ["infantry"],
+        "abilities": {
+            "range": 1,
+            "armour": 5,
+            "morale": 6,
+            "speed": 3,
+            "attack": 90,
+            "defenseSkill": 2,
+            "shieldDefense": 4
+        },
+        "movementPoint": 4
+    },
+    "melee-infantry": {
+        "cost": 5,
+        "trainingTime": 2,
+        "numTroops": 10,
+        "type": ["infantry"],
+        "abilities": {
+            "range": 1,
+            "armour": 5,
+            "morale": 6,
+            "speed": 3,
+            "attack": 80,
+            "defenseSkill": 3,
+            "shieldDefense": 3
+        },
+        "movementPoint": 10
+    },
+    "pikemen": {
+        "cost": 5,
+        "trainingTime": 2,
+        "numTroops": 10,
+        "type": ["infantry"],
+        "abilities": {
+            "range": 1,
+            "armour": 5,
+            "morale": 6,
+            "speed": 3,
+            "attack": 80,
+            "defenseSkill": 3,
+            "shieldDefense": 3
+        },
+        "movementPoint": 10
+    }
+}

@@ -1,0 +1,7 @@
+1. After each turn, we increased wealth first before taxing.
+2. If two player satisfies the goals after the same round, the first registered player wins.  
+3. Two plays compete for the same goals; 
+4. cost of training all units is 5 gold;
+5. days of training is 2 for all units;
+6. Names of provinces are unique
+7. When a defending unit breaks, it dies straight away. 
